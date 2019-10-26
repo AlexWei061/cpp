@@ -11,7 +11,7 @@ public:
 	char str[1000];                                                                              //定义字符串变量
 };
 
-class Print : public InputOutput {                                                                        //class Print继承于IO
+class Print : public InputOutput {                                                               //class Print继承于IO
 public:
 	void print() {}
 	template<typename T, typename ...Types>
@@ -21,9 +21,10 @@ public:
 	}
 };
 
-class Input : public InputOutput {                                                                         //class Input继承于IO
+class Input : public InputOutput {                                                                //class Input继承于IO
 public:
-	int inputint() {                                                                              //输入一个整数
+	int inputint(string str) {                                                                    //输入一个整数
+		cout << str;
 		inum = 0;                                                                                 //存储这个数
 		bool is_negative = false;                                                                 //是否为负数
 		char c;                                                                                   //当前字符
@@ -35,7 +36,7 @@ public:
 			is_negative = true;                                                                   //存储
 		}
 		else {
-			inum += c - '0';                                                                       //若为正数或0 num += 要输入数字的第一位
+			inum += c - '0';                                                                      //若为正数或0 num += 要输入数字的第一位
 		}
 		c = cin.get();
 		while (c >= '0' and c <= '9') {                                                           //输入剩下的位数
@@ -51,19 +52,12 @@ public:
 		}
 	}
 
-	char inputchar() {                                                                             //输入字符
+	char inputchar(string str) {                                                                   //输入字符
+		cout << str;
 		c = cin.get();                                                                       
 		return c;
 	}
-	char* inputstring() {
-		int c = cin.get();
-		int i = 0;
-		while (c >= 33 and c <= 125) {
-			str[i] = c;
-			c = cin.get();
-		}
-		return str;
-	}
+
 };
 
 Input inputer;
@@ -71,10 +65,8 @@ Print printer;
 
 int main()
 {
-	char c;
-	int num = 0;
-	num = inputer.inputint();
-	c = inputer.inputchar();
-	printer.print(num,c);
+	int n = 0;
+	n = inputer.inputint("Please input an intger:");
+	printer.print(n);
 	return 0;
 }
