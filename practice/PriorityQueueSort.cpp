@@ -25,6 +25,6 @@ int main(){
     PriorityQueueSort(n, num_list);
     for (int j = 0; j < n; j++){
     	printf("%d%c",num_list[j],' ');
-    }
+    
     return 0;
 }
