@@ -29,7 +29,7 @@ int main(){
     printf("program started");
     scanf("%d%d\n",&n,&m);
     for(int i = 1; i <= n; i++){
-        scanf("%s",Map[i]+1)
+        scanf("%s",Map[i]+1);
     }
     memset(way,0,sizeof(way));
 
