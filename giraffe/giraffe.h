@@ -1,7 +1,7 @@
 #ifndef __GIRAFFE_H__
 #define __GIRAFFE_H__
 
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 template<typename T>
