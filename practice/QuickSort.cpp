@@ -1,51 +1,45 @@
-#include "iostream"
-#include "vector"
-#include "algorithm"
+#include<bits/stdc++.h>
 using namespace std;
 
-void quicksort(int data[], int left,int right)
-{
-	if (left >= right)
-		return;
-	int pivot = (left+right)/2;
-	vector<int> less;
-	vector<int> greater;
-	int tmp;
-	for (int i = left; i < right; i++)
-	{
-		if (i == pivot)
-			tmp = data[pivot];
-		else if (data[i] < data[pivot])
-			less.push_back(data[i]);
-		else
-			greater.push_back(data[i]);
+int patition(int data[], int low, int high){
+	int pivot = data[low];
+	int i = low;
+	int j = high;
+	while(i < j){
+		do{
+			i++;
+		}while(data[i] < pivot);
+
+		do{
+			j--;
+		}while(data[j] > pivot);
+
+		if(i < j){
+			swap(data[i],data[j]);
+		}
 	}
-	for (int i = left; i < right; i++)
-	{
-		if (i < left + less.size())
-			data[i] = less[less.size() - i - 1 + left];
-		else if (i == left + less.size())
-			data[i] = tmp, pivot = i;
-		else
-			data[i] = greater[greater.size() - i+ less.size() + left];
-	}
-	quicksort(data,left, pivot);
-	quicksort(data, pivot+1,right);
- 
-	
+	swap(data[low],data[j]);
+	return j;
 }
- 
+  
+ void quicksort(int data[], int low, int high){
+	 if(low < high){
+		 int j = patition(data, low, high);
+		 quicksort(data, low, j);
+		 quicksort(data, j + 1, high);
+	 }
+ }
  
 int main() 
 {
-	int data[] = { 12, 4, 34, 6, 8, 65, 3, 2, 988, 45 };
+	//int data[] = { 12, 4, 34, 6, 8, 65, 3, 2, 988, 45 };
+	int data[] = { 8, 9, 1, 7, 2, 3, 5, 4, 6, 0 };
 	int len = sizeof(data)/sizeof(int); 
 	quicksort(data, 0, len);
-	cout << "ÅÅÐòºó£º";
+	cout << "The sorted list is: ";
 	for(int i = 0; i < len; i++){
-		
 		cout << data[i] << "  " ;
-	
 	}
+	cout << endl;
 	return 0;
 }
