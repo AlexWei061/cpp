@@ -9,6 +9,7 @@
 #!/ke02_AlterList/**/
  
 #增加指定扩展名文件和MAKEFILE文件
+!/algorithm
 !*.cpp
 !*.c
 !*.h
