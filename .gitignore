@@ -1,4 +1,3 @@
-
 #忽略所有文件和目录
 *
  
@@ -10,6 +9,8 @@
  
 #增加指定扩展名文件和MAKEFILE文件
 !/algorithm
+!/practice
+!/giraffe
 !*.cpp
 !*.c
 !*.h
