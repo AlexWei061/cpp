@@ -1,11 +1,6 @@
 #忽略所有文件和目录
-*
- 
-#增加指定目录和下面所有目录
-#!/ke01_SeqList/
-#!/ke01_SeqList/**/
-#!/ke02_AlterList/
-#!/ke02_AlterList/**/
+
+
  
 #增加指定扩展名文件和MAKEFILE文件
 !/algorithm
