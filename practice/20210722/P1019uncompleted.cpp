@@ -14,7 +14,7 @@ bool isPrefix(string prefix, string word){                  //return if "prefix"
     return is_prefix;
 }
 
-int ans = 0;
+int ans = 0; 
 void dfs(string prefix, int len){
     ans = max(ans, len);
     for(int i = 1; i <= n; i++){                             //枚举所有字符串
