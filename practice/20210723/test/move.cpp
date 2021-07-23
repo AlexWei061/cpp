@@ -77,7 +77,9 @@ int main(){
 	int ans = 0;
 	for(int i = 1; i <= n; i++){
 		for(int j = 1;j <= m; j++){
-			bfs(i, j, 0);
+			if(mmap[i][j] == 0){
+				bfs(i, j, 0);
+			}
 			//printf("%d ", findMax(n, m, ttime));
 			//printf("%d ",);
 			//printf("%d ", ans);
