@@ -5,8 +5,8 @@ long long n = 0;
 long long a[100001] = { 0 };
 
 int main(){
-	//freopen("apple.in", "r", stdin);
-	//freopen("apple.out", "w", stdout);
+	freopen("apple.in", "r", stdin);
+	freopen("apple.out", "w", stdout);
 	scanf("%lld", &n);
 	int j = 1;
 	for(int i = 1; i <= sqrt(n); i++){
