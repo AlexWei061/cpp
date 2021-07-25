@@ -21,7 +21,7 @@ bool isPowerOfTwo(int n){
 所以若数字m & (m-1) = 0, m就可以写成2^n的形式
 */
 
-//suntime complexity : O(1)
+//runtime complexity : O(1)
 bool isPowerOfTwo(int n){
     if(n <= 0){
         return false;
