@@ -1,6 +1,9 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+//https://www.runoob.com/cprogramming/c-function-printf.html
+//http://c.biancheng.net/view/159.html
+
 int main(){
     /* 1.printf("string\n") */
     printf("Hello world\n");
@@ -12,7 +15,7 @@ int main(){
     输出控制符介绍 :
     %d            按十进制整型数据的实际长度输出
 
-    %ld           输出长整型数据
+    %lld          输出长整型数据
 
     %md           m 为指定的输出字段的宽度. 如果数据的位数小于 m, 则左端补以空格, 若大于 m, 则按实际位数输出
 
@@ -31,6 +34,12 @@ int main(){
     %s            用来输出字符串. 用 %s 输出字符串同前面直接输出字符串是一样的. 但是此时要先定义字符数组或字符指针存储或指向字符串
 
     %x            以十六进制形式输出整数, 这个很重要(或%X 或%#x 或%#X)
+
+    %e,E          以指数形式输出单、双精度实数
+
+    %g,G          以%f或%e中较短的输出宽度输出单、双精度实数
+
+    %p            输出指针地址
     */
     
     //%x %X %#x %#X的区别
@@ -39,6 +48,10 @@ int main(){
     printf("%X\n", i);     //--->  2F
     printf("%#x\n", i);    //--->  0x2f
     printf("%#X\n", i);    //--->  0X2F 
+
+    double n = 24.54;
+    printf("%e\n", n);     //--->  2.454000e+01
+    printf("%E\n", n);     //--->  2.454000E+01
 
     return 0;
 }
