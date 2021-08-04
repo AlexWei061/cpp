@@ -49,6 +49,6 @@ int babyStepGaintStep(int a, int b, int p){
 }
 
 int main(){
-    
+    printf("%d\n", babyStepGaintStep(1, 1, 1));
     return 0;
 }
