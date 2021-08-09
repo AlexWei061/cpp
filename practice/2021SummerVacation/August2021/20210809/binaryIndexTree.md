@@ -38,8 +38,8 @@ int lowbit(int x){<br>
 
 void update(int i, int x){&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; // arr[i] += x;<br>
 &emsp; while(i <= n){<br>
-&emsp; tree[i] += x;<br>
-&emsp; i += lowbit(i);<br>
+&emsp; &emsp; tree[i] += x;<br>
+&emsp; &emsp; i += lowbit(i);<br>
 &emsp; }<br>
 }
 
@@ -48,8 +48,8 @@ void update(int i, int x){&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp
 int query(int n){&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; //求 1 ~ n 的和<br>
 &emsp; int sum = 0;<br>
 &emsp; while(n > 0){<br>
-&emsp; sum += tree[n];<br>
-&emsp; n -= lowbit(n);<br>
+&emsp; &emsp; sum += tree[n];<br>
+&emsp; &emsp; n -= lowbit(n);<br>
 &emsp; }<br>
 &emsp; return sum;<br>
 }
