@@ -23,3 +23,33 @@
 ## 应用
 1. 单点修改
 2. 区间求和
+
+----
+
+## 实现
+
+&emsp; 由上面我们给出的图片可以看出，树状数组的每个数向上指向的是位置比它高一位且在它右侧最近的数。也就是说 $tree[i+lowbit(i)] += tree[i]$。利用这个性质就可以写出树状数组的 update 函数。
+
+
+int lowbit(int x){<br>
+&emsp; return x & (-x);<br>
+}
+
+
+void update(int i, int x){&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; // arr[i] += x;<br>
+&emsp; while(i <= n){<br>
+&emsp; tree[i] += x;<br>
+&emsp; i += lowbit(i);<br>
+&emsp; }<br>
+}
+
+&emsp; 根据同样的原理，我们也可以写出树状数组的 query 函数。
+
+int query(int n){&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; //求 1 ~ n 的和<br>
+&emsp; int sum = 0;<br>
+&emsp; while(n > 0){<br>
+&emsp; sum += tree[n];<br>
+&emsp; n -= lowbit(n);<br>
+&emsp; }<br>
+&emsp; return sum;<br>
+}
