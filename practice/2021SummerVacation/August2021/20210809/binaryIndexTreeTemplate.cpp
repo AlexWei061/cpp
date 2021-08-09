@@ -7,7 +7,7 @@ int n = 10;
 int  arr[MAXN] = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 int tree[MAXN] = { 0 };
 
-int lowbit(int x){                    // x 的二进制末尾 0 的数量
+int lowbit(int x){
     return x & (-x);
 }
 
