@@ -5,7 +5,7 @@ string word;
 string text;
 
 int main(){
-	freopen("a.in", "r", stdin);
+	//freopen("a.in", "r", stdin);
     getline(cin, word);
     //scanf("\n");
     getline(cin, text);
@@ -35,6 +35,7 @@ int main(){
         int temp = 100000000;
         int tot = 0;
         int ttot = 0;
+        //printf("text.legth = %d\n", text.length());
         while((index = text.find(word)) < text.length()){
             //printf("index = %d\n", index);
             if((text[index-1] == ' ' and text[index+word.length()] == ' ') or (index == 0 and text[index+word.length()] == ' ') or (index == text.length()-word.length() and text[index-1] == ' ')){
