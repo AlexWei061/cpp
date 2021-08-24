@@ -8,8 +8,8 @@ int mmap[25][25] = { 0 };
 int    f[25][25] = { 0 };
 
 void work(){
-	if(mmap[1][1] = 1){
-		printf("%d\n", 0);
+	if(mmap[1][1] == 1){
+		return;
 	}
 	else{
 		f[1][1] = 1;
@@ -33,6 +33,26 @@ int main(){
 		scanf("%d%d", &x, &y);
 		mmap[x][y] = 1;
 	}
+
+    /*
+    for(int i = 1; i <= n; i++){
+        for(int j = 1; j <= i; j++){
+            printf("%d ", mmap[i][j]);
+        }
+        puts("");
+    }
+    */
+
+    work();
+
+    /*
+    for(int i = 1; i <= n; i++){
+        for(int j = 1; j <= i; j++){
+            printf("%d ", f[i][j]);
+        }
+        puts("");
+    }
+    */
 
 	int ans = 0;
 	for(int i = 1; i <= n; i++){
