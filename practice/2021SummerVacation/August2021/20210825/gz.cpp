@@ -16,14 +16,16 @@ bool is_enough(long long v){                // 每个袋子体积为 v 能否装
 			v0 -= a[i];
 		}
 		else{
-			m -= 1;
-			v0 = v;
+            while(a[i] > v0){
+			    m0 -= 1;
+			    v0 = v;
+                if(m0 < 0){
+                    return false;
+                }
+            }
 		}
 	}
-	if(m < 0){
-		return false;
-	}
-	return true;
+    return true;
 }
 
 int main(){
