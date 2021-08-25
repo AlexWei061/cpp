@@ -17,6 +17,7 @@ bool is_enough(long long v){                // 每个袋子体积为 v 能否装
 		}
 		else{
 			m -= 1;
+			v0 = v;
 		}
 	}
 	if(m < 0){
