@@ -1,4 +1,4 @@
-## 泰勒展开推导
+## 泰勒展开推导 : 
 
 $$ f(x) = a_0 + a_1x + a_2x^2 + a_3x^3 + \cdots + a_nx^n $$
 
@@ -50,4 +50,32 @@ $$ \therefore f(x) = \sum_{n=0}^{N} \frac{f^{(n)}(0)}{n!}     x^n + Rn(x) $$
 $$ f(x) = \sum_{n=0}^{N} \frac{f^{(n)}(a)}{n!} (x-a)^n + Rn(x) $$
 
 ----
+
+## 二级结论 :
+
+1.
+$$ f(x) = e^x \therefore f^{(n)}(0) = 1$$
+$$ \therefore e^x = \sum_{n=0}^{N} \frac{x^n}{n!} = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \frac{x^4}{4!} + \cdots $$
+
+2.
+$$ f(x) = \sin{x} $$ 
+$$  \therefore f^{(4n+1)}(0) = 1 $$ 
+$$ 且 f^{(4n+2)}(0) = 0 $$
+$$ 且 f^{(4n+3)}(0) = -1 $$
+$$ 且 f^{(4n+4)}(0) = 0 $$
+$$ \therefore sinx = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \cdots $$
+
+3.
+$$ f(x) = \cos{x} $$
+$$  \therefore f^{(4n+1)}(0) = 0 $$ 
+$$ 且 f^{(4n+2)}(0) = -1 $$
+$$ 且 f^{(4n+3)}(0) = 0 $$
+$$ 且 f^{(4n+4)}(0) = 1 $$
+$$ \therefore cosx = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \cdots $$
+
+4.
+$$ f(x) = (1 + x)^{\alpha}  \therefore f^{(n)}(0) = \alpha (\alpha-1) (\alpha-2) \cdots (\alpha-n+1) = A_{\alpha}^{n} $$
+$$ \therefore (1 + x)^{\alpha} = 1 +  \alpha x + \frac{\alpha(\alpha-1)}{2!}x^2 + \frac{\alpha(\alpha-1)(\alpha-2)}{3!}x^3 + \cdots $$
+
+
 
