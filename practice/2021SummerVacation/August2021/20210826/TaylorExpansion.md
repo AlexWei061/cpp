@@ -77,5 +77,36 @@ $$ \therefore cosx = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \cdo
 $$ f(x) = (1 + x)^{\alpha}  \therefore f^{(n)}(0) = \alpha (\alpha-1) (\alpha-2) \cdots (\alpha-n+1) = A_{\alpha}^{n} $$
 $$ \therefore (1 + x)^{\alpha} = 1 +  \alpha x + \frac{\alpha(\alpha-1)}{2!}x^2 + \frac{\alpha(\alpha-1)(\alpha-2)}{3!}x^3 + \cdots $$
 
+5.
+### &emsp; &emsp; &emsp;欧拉公式:
 
+&emsp; &emsp; &emsp; &emsp; 引入 $i = \sqrt{-1}$
+$$ \therefore i^1 = i 且 i^2 = -1 且 i^3 = -i 且 i^4 = 1 $$
+$$ \therefore i^{4n+1} = i 且 i^{4n+2} = -1 且 i^{4n+3} = -i 且 i^{4n+4} = 1 (其中 n \in Z)$$
+$$ \because e^x = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \frac{x^4}{4!} + \frac{x^5}{5!} + \cdots $$
 
+$$
+
+\begin{aligned}
+ 
+\therefore 
+ e^{ix} = &1 + ix + \frac{(ix)^2}{2!} + \frac{(ix)^3}{3!} + \frac{(ix)^4}{4!} + \frac{(ix)^5}{5!} + \cdots \\
+
+ = &1 + ix -\frac{x^2}{2!} - \frac{ix^3}{3!} + \frac{x^4}{4!} + \frac{ix^5}{5!} + \cdots \\
+
+ = &(1 -\frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \cdots) + (ix - \frac{ix^3}{3!} + \frac{ix^5}{5!} + \cdots) \\
+ 
+ = &(1 -\frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \cdots) + i(x - \frac{x^3}{3!} + \frac{x^5}{5!} + \cdots) \\
+
+ = &\cos{x} + i\sin{x} 
+
+\end{aligned}
+
+$$
+
+$$ \therefore e^{ix} = \cos{x} + i\sin{x} $$
+
+&emsp; &emsp; &emsp; &emsp;当 $x = \pi$ 时:
+
+$$ e^{i\pi} = \cos{\pi} + i\sin{\pi} = -1 $$
+$$ \therefore e^{i\pi} + 1 = 0 $$
