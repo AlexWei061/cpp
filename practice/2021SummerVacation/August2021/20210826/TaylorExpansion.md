@@ -14,7 +14,7 @@ $$ f'(x) = 0 + a_1 + 2a_2x + 3a_3x^2 + \cdots + na_nx^{n-1} $$
 $$ \therefore f'(0) = 0 + a_1 + 2a_2*0 + 3a_3*0^2 + \cdots + na_n*0^{n-1} = a_1 $$
 $$ \therefore a_1 = f'(0) = \frac{f^{(1)}(0)}{1!} $$
 
-$$ f'(x) = \sum_{i=0}^{n} [i \times a_i]  x^{i-1} $$
+$$ f'(x) = \sum_{i=0}^{n} (i \times a_i)  x^{i-1} $$
 
 ----
 
