@@ -92,7 +92,7 @@ $$
 \therefore 
  e^{ix} = &1 + ix + \frac{(ix)^2}{2!} + \frac{(ix)^3}{3!} + \frac{(ix)^4}{4!} + \frac{(ix)^5}{5!} + \cdots \\
 
- = &1 + ix -\frac{x^2}{2!} - \frac{ix^3}{3!} + \frac{x^4}{4!} + \frac{ix^5}{5!} + \cdots \\
+ = &1 + ix -\frac{x^2}{2!} - \frac{ix^3}{3!} + \frac{x^4}{4!} + \frac{ix^5}{5!} - \cdots \\
 
  = &(1 -\frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \cdots) + (ix - \frac{ix^3}{3!} + \frac{ix^5}{5!} + \cdots) \\
  
