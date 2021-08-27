@@ -43,3 +43,37 @@ int main(){
 
 	return 0;
 }
+
+/*
+
+作用 :
+1. f[i][j] 求出图中任意两节点 i, j 的最小路径
+2. 求有向图的连通块 求除图中任意一点是否可以到达另外一点
+
+1.
+int f[MAXN][MAXN] = { 0 };
+初始值 : memset(f, 0x3f, sizeof(f)); 
+void floyd(){
+	for(int k = 1; k <= n; k++){
+		for(int i = 1; i <= n; i++){
+			for(int j = 1; j <= n; j++){
+				f[i][j] = min(f[i][j], f[i][k]+f[k][j]);
+			}
+		}
+	}
+}
+
+2.
+bool f[MAXN][MAXN] = { 0 };
+初始值 : memset(f, 0, sizeof(f));
+void floyd(){
+	for(int k = 1; k <= n; k++){
+		for(int i = 1; i <= n; i++){
+			for(int j = 1; j <= n; j++){
+				f[i][j] = f[i][j] or (f[i][k] and f[k][j]);
+			}
+		}
+	}
+}
+
+*/
