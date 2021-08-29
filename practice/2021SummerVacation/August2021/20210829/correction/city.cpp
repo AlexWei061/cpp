@@ -19,7 +19,7 @@ int parent[MAXN] = { 0 };
 int  rrank[MAXN] = { 0 };
 
 void init(){
-	for(int i = 1; i <= n; i++){
+	for(int i = 0; i <= n; i++){
 		parent[i] = -1;
 		rrank[i]  =  0;
 	}
@@ -59,7 +59,7 @@ int ans = 0;
 int chosen[MAXM] = { 0 };
 void kruskal(){
 	sort(edge, edge+m, comp);
-	for(int i = 0; i < n-1; i++){
+	for(int i = 0; i < m; i++){
 		Tedge e = edge[i];
 		if(findRoot(e.x) != findRoot(e.y)){
 			unionVertices(e.x, e.y);
@@ -73,11 +73,11 @@ int main(){
 	freopen("city.in", "r", stdin);
 	freopen("city.out", "w", stdout);
 	scanf("%d%d", &n, &m);
+
+	init();
 	for(int i = 0; i < m; i++){
 		scanf("%d%d%d", &edge[i].x, &edge[i].y, &edge[i].value);
 	}
-	
-	init();
 	
 	kruskal();
 	printf("%d %d\n", n-1, ans); 
