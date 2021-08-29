@@ -1,40 +1,44 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-#define MAXN 20020
-
-int n = 0, m = 0;
-
-struct Tword{
+struct T{
 	string word;
 	int page;
-}words[MAXN];
+}a[20002];
 
-/*
+string st;
+int n = 0, m = 0;
 
-runtime complexity : O(mn) = 2 * 10^8 Òª³¬Ê± 
-
-*/
+bool comp(T a, T b){
+	return a.word < b.word;
+}
 
 int main(){
-	freopen("scanwords.in", "r", stdin);
-	freopen("scanwords.out", "w", stdout);
 	scanf("%d", &n);
-	for(int i = 0; i < n; i++){
-		cin >> words[i].word >> words[i].page;
+	for(int i = 1; i <= n; i++){
+		cin >> a[i].word >> a[i].page;
 	}
-	
+
+	sort(a+1, a+n+1, comp);
+
 	scanf("%d", &m);
-	for(int i = 0; i <  m; i++){
-		string temp;
-		cin >> temp;
-		for(int j = 0; j < n; j++){
-			if(temp == words[j].word){
-				printf("%d\n", words[j].page);
+	int L = 0, R = 0;
+	while(m--){
+		cin >> st;
+		L = 1; R = n;
+		do{
+			int mid = (L + R) >> 1;
+			if(st == a[mid].word){
+				printf("%d\n", a[mid].page);
 				break;
 			}
-		}
+			if(st > a[mid].word){
+				L = mid + 1;
+			}
+			if(st < a[mid].word){
+				R = mid - 1;
+			}
+		}while(L <= R);
 	}
-	
 	return 0;
 }
