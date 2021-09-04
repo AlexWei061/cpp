@@ -50,9 +50,7 @@ void unionVertices(int x, int y){
 }
 
 /*
-
 runtime complexity : O(nlogn + n)
-
 */
 
 int ans = 0;
