@@ -32,9 +32,9 @@ $$ C_n^m = \frac{n!}{m!(n-m)!} = \frac{n \times (n-1) \times (n-2) \times \cdots
 
 1. 直接递推求出 $n! ， m!^{-1}\mod{p} 和 (n-m)!^{-1}\mod{p}$ 时间复杂度 $O(nlogn)$
 2. 利用性质2递推 $C_n^m = C_{n-1}^m + C_{n-1}^{m-1}$时间复杂度 $O(n)$
-3. 若在计算阶乘的过程中在 $fac[]$ 数组中记录下 $k!$，在 $fac_inv[]$ 数组中记录下 $k!^{-1} \mod{p}$ 就可以做到 $O(nlogn)$ 预处理 $O(1)$ 查询
+3. 若在计算阶乘的过程中在 $fac[]$ 数组中记录下 $k!$，在 $fac\_inv[]$ 数组中记录下 $k!^{-1} \mod{p}$ 就可以做到 $O(nlogn)$ 预处理 $O(1)$ 查询
 
-$$C_n^m \mod{p} = \bigg[ (fac[n]\mod{p}) \times (fac_inv[m]\mod{p}) \times (fac_inv[n-m]\mod{p}) \bigg] \mod{p} $$
+$$C_n^m \mod{p} = \bigg[ (fac[n]\mod{p}) \times (fac\_inv[m]\mod{p}) \times (fac\_inv[n-m]\mod{p}) \bigg] \mod{p} $$
 
 ----
 
