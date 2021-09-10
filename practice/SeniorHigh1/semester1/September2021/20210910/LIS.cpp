@@ -32,13 +32,13 @@ int main(){
 	
     printf("arr[] : ");
     for(int i = 1; i <= N; i++){
-        printf("%-2d ", arr[i]);
+        printf("%2d ", arr[i]);
     }
     puts("");
 
     printf("f[]   : ");
 	for(int i = 1; i <= N; i++){
-		printf("%-2d ", f[i]);
+		printf("%2d ", f[i]);
 	}
 	puts("");
 
