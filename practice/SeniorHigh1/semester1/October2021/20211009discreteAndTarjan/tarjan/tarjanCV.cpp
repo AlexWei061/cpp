@@ -4,7 +4,7 @@ using namespace std;
 #define MAXN 100100
 #define MAXM 2 * MAXN
 
-/* cut-vertex : ¸îµã */
+/* cut-vertex : å‰²ç‚¹ */
 
 int n = 0; int m = 0;
 int root = 0;

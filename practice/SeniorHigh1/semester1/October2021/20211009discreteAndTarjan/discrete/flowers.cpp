@@ -3,28 +3,28 @@
 using namespace std; 
  
 const int MAXN = int(3e5 + 21);                              //3*N 
-int getNum[MAXN];                                            //ÀëÉ¢»¯Êı×é£¬Ö®ËùÒÔÊÇ3*NµÄ¿Õ¼ä£¬ÊÇÒòÎªÒª´æN¶ä»¨¿ª·ÅµÄÆğ¡¢Ê¼Ê±¼ä¡¢²éÑ¯Ê±¼ä 
-int li[MAXN / 3], ri[MAXN / 3], c[MAXN];                     //»¨¿ªµÄÆğÊ¼Ê±¼ä¡¢½áÊøÊ±¼ä¡¢Ê÷×´Êı×é 
+int getNum[MAXN];                                            //ç¦»æ•£åŒ–æ•°ç»„ï¼Œä¹‹æ‰€ä»¥æ˜¯3*Nçš„ç©ºé—´ï¼Œæ˜¯å› ä¸ºè¦å­˜NæœµèŠ±å¼€æ”¾çš„èµ·ã€å§‹æ—¶é—´ã€æŸ¥è¯¢æ—¶é—´ 
+int li[MAXN / 3], ri[MAXN / 3], c[MAXN];                     //èŠ±å¼€çš„èµ·å§‹æ—¶é—´ã€ç»“æŸæ—¶é—´ã€æ ‘çŠ¶æ•°ç»„ 
  
 int lowbit(int x){      
     return x & -x; 
 } 
  
-void add(int x, int num, int len){                           //Çø¼ä¸üĞÂ   
+void add(int x, int num, int len){                           //åŒºé—´æ›´æ–°   
     for(int i=x;i<=len;i+=lowbit(i)) { 
         c[i] += num; 
     } 
 } 
  
-ll query(int x){                                             //µ¥µã²éÑ¯   
+ll query(int x){                                             //å•ç‚¹æŸ¥è¯¢   
     ll ans = 0; 
-    for(int i = x; i > 0; i -=l owbit(i)){ 
+    for(int i = x; i > 0; i -= lowbit(i)){ 
         ans += c[i]; 
     } 
     return ans; 
 } 
  
-int bSerach(int num, int len){                               //ÔÚÊı×égetNumÖĞÕÒ³ö´óÓÚµÈÓÚnumµÄÊı£¬²¢·µ»ØÆäÏÂ±ê+1£¨ÔòÊ÷×´Êı×éÏÂ±ê´Ó1¿ªÊ¼£©   
+int bSerach(int num, int len){                               //åœ¨æ•°ç»„getNumä¸­æ‰¾å‡ºå¤§äºç­‰äºnumçš„æ•°ï¼Œå¹¶è¿”å›å…¶ä¸‹æ ‡+1ï¼ˆåˆ™æ ‘çŠ¶æ•°ç»„ä¸‹æ ‡ä»1å¼€å§‹ï¼‰   
     return lower_bound(getNum, getNum + len, num) - getNum + 1; 
 }
 
@@ -38,30 +38,30 @@ int main() {
         int cnt1 = 0;         
         for(int i = 0; i < n; ++i) { 
             scanf("%d%d", &li[i], &ri[i]); 
-            getNum[cnt1++] = li[i];                          //½«»¨¿ª·Å·¶Î§³öÏÖµÄÊı¾İ´æÈëÊı×é  
+            getNum[cnt1++] = li[i];                          //å°†èŠ±å¼€æ”¾èŒƒå›´å‡ºç°çš„æ•°æ®å­˜å…¥æ•°ç»„  
             getNum[cnt1++] = ri[i]; 
         } 
-        int ques[MAXN / 3];                                  //´æ´¢²éÑ¯Ê±¼ä 
+        int ques[MAXN / 3];                                  //å­˜å‚¨æŸ¥è¯¢æ—¶é—´ 
         for(int i = 0; i < m; ++i){ 
             scanf("%d", &ques[i]);  
-            getNum[cnt1++] = ques[i];                        //½«²éÑ¯³öÏÖµÄÊı¾İ´æÈëÊı×é  
+            getNum[cnt1++] = ques[i];                        //å°†æŸ¥è¯¢å‡ºç°çš„æ•°æ®å­˜å…¥æ•°ç»„  
         }         
-        sort(getNum, getNum + cnt1);                         //¸øËùÓĞ³öÏÖµÄÊıÅÅĞò 
+        sort(getNum, getNum + cnt1);                         //ç»™æ‰€æœ‰å‡ºç°çš„æ•°æ’åº 
  
         int cnt2 = 1; 
         for(int i = 1; i < cnt1; ++i){ 
-            if(getNum[i] != getNum[i - 1])                   // getNum[0]¡«getNum[cnt2-1]´æµÄÊÇÈ¥ÖØºóµÄÊı  
+            if(getNum[i] != getNum[i - 1])                   // getNum[0]ï½getNum[cnt2-1]å­˜çš„æ˜¯å»é‡åçš„æ•°  
                 getNum[cnt2++] = getNum[i]; 
         }   
  
-        for(int i = 0; i < n; ++i){                          //Ê÷×´Êı×éÇø¼ä¸üĞÂ 
-            add(bSerach(li[i], cnt2), 1, cnt2);              //Î»ÖÃbSerach(li[i],cnt2)¡«Î»ÖÃcnt2¾ùÔö¼Ó1 
-            add(bSerach(ri[i], cnt2) + 1, -1, cnt2);         //Î»ÖÃbSerach(lr[i]+1,cnt2)¡«Î»ÖÃcnt2¾ùÔö¼Ó-1 
+        for(int i = 0; i < n; ++i){                          //æ ‘çŠ¶æ•°ç»„åŒºé—´æ›´æ–° 
+            add(bSerach(li[i], cnt2), 1, cnt2);              //ä½ç½®bSerach(li[i],cnt2)ï½ä½ç½®cnt2å‡å¢åŠ 1 
+            add(bSerach(ri[i], cnt2) + 1, -1, cnt2);         //ä½ç½®bSerach(lr[i]+1,cnt2)ï½ä½ç½®cnt2å‡å¢åŠ -1 
         }  
         printf("Case #%d:\n", ++cnt); 
         for(int i = 0; i < m; ++i){ 
-            cout << query(bSerach(ques[i],cnt2)) << endl;    //Ê÷×´Êı×éµ¥µã²éÑ¯  
-        }                                                    //bSerach(ques[i],cnt2)ÊÇ²éÕÒques[i]ÔÚÀëÉ¢»¯Êı×éÖĞµÄÎ»ÖÃ 
+            cout << query(bSerach(ques[i],cnt2)) << endl;    //æ ‘çŠ¶æ•°ç»„å•ç‚¹æŸ¥è¯¢  
+        }                                                    //bSerach(ques[i],cnt2)æ˜¯æŸ¥æ‰¾ques[i]åœ¨ç¦»æ•£åŒ–æ•°ç»„ä¸­çš„ä½ç½® 
     } 
     return 0; 
 }

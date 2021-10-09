@@ -13,7 +13,7 @@ int x[MAXK] = { 0 };
 int c[MAXK] = { 0 };
 int sum[MAXN] = { 0 };
 
-int f[MAXN][MAXK] = { 0 };                  // f[i][j] --> ¶ÔÓÚ t[i], x[i] ÄÜ×îÔç×·ËÝµ½µÄÊ±¼äµÄÏÂ±ê 
+int f[MAXN][MAXK] = { 0 };                  // f[i][j] --> å¯¹äºŽ t[i], x[i] èƒ½æœ€æ—©è¿½æº¯åˆ°çš„æ—¶é—´çš„ä¸‹æ ‡ 
 void work(int t[], int x[]){
 	for(int i = 1; i <= n; i++){
 		for(int j = 1; j <= k; j++){
@@ -22,7 +22,7 @@ void work(int t[], int x[]){
 	}
 }
 
-/* sum[i]  µÚ i ´ËÊ±µÄ×îÐ¡»¨·Ñ  sum[i] = min{ min{sum[i-1] + One, sum[f[i][j]-1] + c[j} } ÆäÖÐ 1 <= j <= k */
+/* sum[i]  ç¬¬ i æ­¤æ—¶çš„æœ€å°èŠ±è´¹  sum[i] = min{ min{sum[i-1] + One, sum[f[i][j]-1] + c[j} } å…¶ä¸­ 1 <= j <= k */
 void dp(){
 	for(int i = 1; i <= n; i++){
 		int ans = INFI;
