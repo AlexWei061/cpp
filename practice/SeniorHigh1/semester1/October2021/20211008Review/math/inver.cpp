@@ -14,8 +14,8 @@ int exgcd(int a, int b, int &x, int &y){        // ax + by = gcd(a, b) --> (x, y
 	return d;
 }
 
-// xÎª a µÄÄ£ p ³Ë·¨ÄæÔª 
-int inver(int a, int b){                        // ax ¡Ô1 (mod b) --> x
+// xÎª a ï¿½ï¿½Ä£ p ï¿½Ë·ï¿½ï¿½ï¿½Ôª 
+int inver(int a, int b){                        // ax ï¿½ï¿½1 (mod b) --> x
 	int x = 0; int y = 0;
 	exgcd(a, b, x, y);
 	return (x % b + b) % b;
