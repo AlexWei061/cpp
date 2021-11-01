@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 #define MAXN 5050
-#define MAXM 10010
+#define MAXM 5050
 #define INFI 0x3f3f3f3f
 
 int ans = 0; 
@@ -21,7 +21,7 @@ void add(int x, int y, int weight){
 }
 
 int size[MAXN] = { 0 };
-int f[MAXN][MAXN][5] = { 0 };
+int f[MAXN][MAXN][10] = { 0 };
 void dfs(int x, int fa){
 	size[x] = 1;
 	f[x][1][0] = 0; f[x][1][1] = 0; f[x][1][2] = 0;
@@ -47,6 +47,8 @@ void dfs(int x, int fa){
 }
 
 int main(){
+	freopen("set.in", "r", stdin);
+	freopen("set.out", "w", stdout);
 	scanf("%d%d", &n, &k);
 	for(int i = 1; i < n; i++){
 		int x, y, w;
