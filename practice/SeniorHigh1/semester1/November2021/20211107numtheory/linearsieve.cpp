@@ -19,11 +19,6 @@ int primes(int n){
 	return cnt;
 }
 
-#include<bits/stdc++.h>
-using namespace std;
-#define MAXN 100100
-
-int v[MAXN] = { 0 };
 int phi[MAXN] = { 0 };
 void euler(int n){
 	memset(v, 0, sizeof(v));
