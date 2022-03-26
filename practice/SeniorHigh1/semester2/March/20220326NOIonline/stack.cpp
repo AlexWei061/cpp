@@ -59,9 +59,8 @@ struct BIT{
 void solve2(){
 	for(int i = 1; i <= n; i++){
 		T.f[i] = i;
-		while(T.f[i] >= 2 and (arr[i] >= arr[T.f[i] - 1])){
+		while(T.f[i] >= 2 and (arr[i] >= arr[T.f[i] - 1]))
 			T.f[i] = T.f[T.f[i] - 1];
-		}
 		T.add(i); sort(T.t[i].begin(), T.t[i].end());
 	}
 	while(q--){ int l = in; int r = in; cout << (T.query(l, r)) << '\n'; }
