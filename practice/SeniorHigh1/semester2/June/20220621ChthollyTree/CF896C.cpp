@@ -24,10 +24,10 @@ set<Tnode> s;
 
 set<Tnode> :: iterator split(int pos){
 	set<Tnode> :: iterator it = s.lower_bound(Tnode(pos));
-	if(it != s.end() and it -> l == pos) return it;
+	if(it != s.end() and it->l == pos) return it;
 	it--;
-	if(it -> r < pos) return s.end();
-	int l = it -> l, r = it -> r, v = it -> v;
+	if(it->r < pos) return s.end();
+	int l = it->l, r = it->r, v = it->v;
 	s.erase(it);
 	s.insert(Tnode(l, pos - 1, v));
 	return s.insert(Tnode(pos, r, v)).first;
@@ -58,7 +58,7 @@ int rk(int l, int r, int x){
 	set<Tnode> :: iterator ir = split(r + 1), il = split(l);
 	vector<Trank> v;
 	for(set<Tnode> :: iterator i = il; i != ir; i++)
-		v.push_back(Trank(i -> v, i -> r - i -> l + 1));
+		v.push_back(Trank(i->v, i->r - i->l + 1));
 	sort(v.begin(), v.end());
 	int i = 0;
 	for(i = 0; i < v.size(); i++)
@@ -81,7 +81,7 @@ int calp(int l, int r, int x, int y){
 	set<Tnode> :: iterator ir = split(r + 1), il = split(l);
 	int ans = 0;
 	for(set<Tnode> :: iterator i = il; i != ir; i++)
-		ans = (ans + power(i -> v, x, y) * (i -> r - i -> l + 1) % y) % y;
+		ans = (ans + power(i->v, x, y) * (i->r - i->l + 1) % y) % y;
 	return ans; 
 }
 
