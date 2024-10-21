@@ -1,5 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
+#define int long long 
 
 int t = 0;
 
@@ -9,7 +10,7 @@ int solve(int n, int k){
 	else return n / k;
 }
 
-int main(){
+signed main(){
 	cin >> t;
 	while(t--){
 		int n = 0, k = 0;

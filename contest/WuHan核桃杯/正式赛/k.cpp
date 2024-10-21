@@ -1,15 +1,18 @@
 #include<bits/stdc++.h>
 using namespace std;
+#define int long long
 
 int t = 0;
 
-int main(){
+signed main(){
 	cin >> t;
 	while(t--){
 		int n = 0, m = 0, x = 0, y = 0;
 		cin >> n >> m >> x >> y;
-		if(min(n, m) == 1) cout << "1\n";
-		else cout << min(n, m) + 1 << '\n';
+		int temp = n < m ? n : m;
+		if(n == 1 and m == 1) cout << 0 << '\n';
+		else if(temp == 1) cout << 1 << '\n';
+		else cout << temp + 1 << '\n';
 	}
 	return 0;
 }
