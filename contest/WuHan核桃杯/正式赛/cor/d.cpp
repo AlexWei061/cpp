@@ -14,4 +14,5 @@ int main(){
 	for(int i = 2; i <= n; i++) ans = max(ans, b[i]);
 	cout << ans << '\n';
 	return 0;
-} 
+}  
+ 
