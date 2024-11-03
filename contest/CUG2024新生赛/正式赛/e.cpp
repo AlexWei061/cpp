@@ -10,8 +10,8 @@ int dfs(int day, int dam, int ang, int pre1, int pre2){
 	if(day > n) return dam;
 	// op1
 	if(pre1 != 1 and pre2 != 1)
-		if(pre1 != 4) ans = max(ans, dfs(day + 1, day + d[day], ang, 1, pre1));
-		else ans = max(ans, dfs(day + 1, day + 2 * d[day], ang, 1, pre1));
+		if(pre1 != 4) ans = max(ans, dfs(day + 1, dam + d[day], ang, 1, pre1));
+		else ans = max(ans, dfs(day + 1, dam + 2 * d[day], ang, 1, pre1));
 	// op2
 	if(pre1 != 2 and pre2 != 2) ans = max(ans, dfs(day + 1, dam, ang + a, 2, pre1));
 	// op3

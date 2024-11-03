@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-#define MAXN 10010000
+#define MAXN 1001000
 
 int n = 0, m = 0, k = 0;
 struct Tnode{
