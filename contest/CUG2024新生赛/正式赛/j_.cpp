@@ -30,7 +30,7 @@ int main(){
 		s[i].ll = x_0 > s[i].ll ? x_0 : s[i].ll;
 		if(lll <= s[i].ll and s[i].ll <= rrr)
 			if(s[i].rr > rrr) ans += s[i].rr - rrr, rrr = s[i].rr;
-		if(s[i].ll > rrr) ans += s[i].rr - s[i].ll, lll = s[i].ll, rrr = s[i].ll;
+		if(s[i].ll > rrr) ans += s[i].rr - s[i].ll, lll = s[i].ll, rrr = s[i].rr;
 	}
 	printf("%lf\n", ans);
 	return 0;
